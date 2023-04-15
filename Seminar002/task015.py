@@ -19,11 +19,9 @@ while count <= wotermellon_num:
     watermellon = random.randint(3, 30)
     print(f'Вес арбуза {count}: {watermellon}')
     if watermellon < min_weight:
-        min_weight = watermellon
-        number_min = count
+        min_weight, number_min = watermellon, count
     if watermellon > max_weight:
-        max_weight = watermellon
-        number_max = count
+        max_weight, number_max = watermellon, count
     count += 1
 print(f'Иван взял для себя {number_max} арбуз весом {max_weight} кг.')
 print(f'Тёще взял {number_min} арбуз весом {min_weight} кило.')
