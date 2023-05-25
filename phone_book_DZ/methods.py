@@ -37,11 +37,3 @@ def upd_data(phone_list, upd_line, new_data):
         for i in upd_list:
             file.writelines(':'.join(i) + '\n')
 
-
-# look_data(read_data('test.txt'))
-# name, phones, comment = input("Введите ФИО:\t"), input("Введите телефон:\t"), \
-#     input("Введите комментарий:\t")
-# string_upd = [name, phones, comment]
-# upded_line = int(input('Напишите номер контакта, для удаления, или нажмите 0, чтобы прервать операцию.\t'))
-# upd_data('test.txt', upded_line, string_upd)
-# look_data(read_data('test.txt'))
