@@ -36,8 +36,14 @@ def empty_search(word) -> str:
 
 input_change = 'Какой контакт будем менять: '
 input_index = 'Введите индекс контакта: '
+input_delete = 'Какой контакт будем удалять: '
 
 change_contact = "Введите новые данные или оставьте поле пустым, чтобы не менять: "
 
+
 def change_successful(name: str) -> str:
     return f'Контакт {name} успешно изменён!'
+
+
+def delete_successful(name: str) -> str:
+    return f'Контакт {name} успешно удалён'

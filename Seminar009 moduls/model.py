@@ -31,6 +31,9 @@ def add_contact(new: dict[str, str]) -> str:
     global phone_book
     new_id = int(phone_book[-1].get('id')) + 1
     new['id'] = str(new_id)
+    keys = list(new.keys())  # Создаём список именно ключей словаря
+    keys.insert(0, 'id')  # Помещаем на 0 индекс id
+    new = {key: new[key] for key in keys}  # Полностью переписываем принимаемый словарь из созданого уже с id
     phone_book.append(new)
     return new.get('name')
 
@@ -54,3 +57,12 @@ def change_contact(new: dict, index: int) -> str:
             contact['phone'] = new.get('phone', contact.get('phone'))
             contact['comment'] = new.get('comment', contact.get('comment'))
             return contact.get('name')
+
+
+def delete_contact(index: int) -> str:
+    global phone_book
+    for contact in phone_book:
+        if index == contact.get('id'):
+            name = contact.get('name')
+            phone_book.remove(contact)
+            return name
